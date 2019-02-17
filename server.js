@@ -1,12 +1,17 @@
-var express = require('express');
-var graphqlHTTP = require('express-graphql');
-var { buildSchema } = require('graphql');
-var schema = require('./src/graphql/schema');
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const { buildSchema } = require('graphql');
+const schema = require('./src/graphql/schema');
+const cors = require('cors');
 
-var app = express();
+const app = express();
+
+app.use(cors());
+
 app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  graphiql: true,
+    schema: schema,
+    graphiql: true,
 }));
+
 app.listen(4000);
 console.log('Running a GraphQL API server at localhost:4000/graphql');
