@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 export default {
   Query: {
@@ -7,12 +7,12 @@ export default {
     },
     order: (parent, { id }, { models }) => {
       return _.find(models.orders, { id: id });
-    }
+    },
   },
   Mutation: {
     deleteOrder: (parent, { id }, { models }) => {
       let orderToDelete = _.remove(models.orders, { id: id });
       return orderToDelete[0];
     },
-  }
-}
+  },
+};
