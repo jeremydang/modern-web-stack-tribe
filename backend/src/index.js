@@ -1,12 +1,12 @@
-import express from "express";
-import graphqlHTTP from "express-graphql";
-import bodyParser from "body-parser";
-import schema from "./graphql/schema";
-import models from "./models";
+import express from 'express';
+import graphqlHTTP from 'express-graphql';
+import bodyParser from 'body-parser';
+import schema from './graphql/schema';
+import models from './models';
 
 const options = {
-  port: process.env.PORT || "4000",
-  endpoint: "/graphql",
+  port: process.env.PORT || '4000',
+  endpoint: '/graphql',
 };
 
 const app = express();
@@ -17,9 +17,9 @@ app.use(
   graphqlHTTP({
     schema,
     context: {
-      models
+      models,
     },
-    graphiql: true
+    graphiql: true,
   })
 );
 
