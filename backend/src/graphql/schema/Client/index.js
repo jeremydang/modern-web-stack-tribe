@@ -1,4 +1,6 @@
-export default `
+import { gql } from 'apollo-server-express';
+
+export default gql`
   type Client {
     id: ID!
     customerId: Int!
@@ -8,11 +10,11 @@ export default `
     lfgCustomerId: Int
     orders: [Order!]!
   }
-  type Query {
+  extend type Query {
     client(id: ID!): Client
     clients: [Client!]!
   }
-  type Mutation {
+  extend type Mutation {
     createClient(client: CreateClientInput): Client!
     updateClient(id: ID!, client: UpdateClientInput!): Client
     deleteClient(id: ID!): Client

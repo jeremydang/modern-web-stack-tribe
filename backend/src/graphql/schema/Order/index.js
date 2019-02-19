@@ -1,4 +1,6 @@
-export default `
+import { gql } from 'apollo-server-express';
+
+export default gql`
   type Order {
     id: ID!
     orderId: Int!
@@ -9,11 +11,11 @@ export default `
     currency: String!
     customerId: Int!
   }
-  type Query {
+  extend type Query {
     order(id: ID!): Order!
     orders: [Order!]!
   }
-  type Mutation {
+  extend type Mutation {
     deleteOrder(id: ID!): Order!
   }
 `;
