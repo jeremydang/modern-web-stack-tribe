@@ -1,8 +1,9 @@
 import express from 'express';
-import graphqlHTTP from 'express-graphql';
+import { ApolloServer } from 'apollo-server-express';
 import bodyParser from 'body-parser';
 import schema from './graphql/schema';
-import models from './models';
+import resolvers from './graphql/resolvers/';
+import mocks from './models/mocks';
 
 const options = {
   port: process.env.PORT || '4000',
@@ -11,16 +12,18 @@ const options = {
 
 const app = express();
 
-app.use(
-  options.endpoint,
-  bodyParser.json(),
-  graphqlHTTP({
-    schema,
-    context: {
-      models,
-    },
-    graphiql: true,
-  })
-);
+const server = new ApolloServer({
+  typeDefs: schema,
+  resolvers,
+  mocks,
+  playground: {
+    endpoint: `http://localhost:${options.port}${options.endpoint}`,
+  },
+});
 
-app.listen(options.port, () => console.log(`Browse to localhost:${options.port}/graphql`));
+app.use(bodyParser.json());
+server.applyMiddleware({ app, path: options.endpoint });
+
+app.listen(options.port, () =>
+  console.log(`Browse to localhost:${options.port}${options.endpoint}`)
+);
