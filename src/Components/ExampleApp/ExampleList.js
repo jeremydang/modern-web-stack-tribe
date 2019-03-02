@@ -1,38 +1,20 @@
 import React, { Component } from 'react';
-import graphql from 'react-apollo';
-import gql from "graphql-tag";
+import Example from './Example';
 
-const getExampleQuery = gql`
-    {
-        examples {
-            id
-            name
-            age
-        }
-    }
-`
-
-class ExampleList extends Component
-{
-    renderExamples = (examples) => {
-        return examples.map(example => {
-            return (
-                <ul>
-                    <li>example.id</li>
-                    <li>example.name</li>
-                    <li>example.age</li>
-                </ul>
-                )
-        });
+class ExampleList extends Component {
+    renderExamples = () => {
+        return this.props.examples.map((example, index) => {
+            return <Example name={example.name} age={example.age} key={example.id}/>
+        })
     };
 
     render() {
         return (
-            <div className="header">
-                {this.renderExamples(this.props)}
-            </div>
+            <ul className="example-list">
+                {this.renderExamples()}
+            </ul>
         )
     }
 }
 
-export default graphql(getExampleQuery)(ExampleList)
+export default ExampleList
