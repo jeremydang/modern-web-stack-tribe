@@ -1,0 +1,11 @@
+
+.rowContainer {
+  composes: rowContainer from '../../../shared/styles/table.css';
+}
+
+.rowValue {
+  composes: cellContainer from '../../../shared/styles/table.css';
+  composes: tableText from '../../../shared/styles/typography.css';
+  min-width: 72px;
+  width: 20%;
+}

@@ -1,0 +1,18 @@
+:root {
+  /* Global */
+  --font-family-base: Helvetica Neue LT Com, Helvetica, Arial, sans-serif;
+  --font-color: #333;
+  --primary-color: #0083ca;
+  --base-color: #495665;
+
+  /* Section Title */
+  --section-title-font-size: 20px;
+  --section-title-color: var(--primary-color);
+
+  /* Table */
+  --table-bg-color: #f7f7f7;
+  --table-text-color: var(--base-color);
+  --table-border-bottom: 1px solid var(--base-color);
+  --table-min-height: 100px;
+  --table-max-height: 300px;
+}

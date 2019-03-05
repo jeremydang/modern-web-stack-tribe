@@ -3,7 +3,8 @@ import { ApolloServer } from 'apollo-server-express';
 import bodyParser from 'body-parser';
 import schema from './graphql/schema';
 import resolvers from './graphql/resolvers/';
-import mocks from './models/mocks';
+import models from './models/index';
+// import mocks from './models/mocks';
 
 const options = {
   port: process.env.PORT || '4000',
@@ -15,7 +16,9 @@ const app = express();
 const server = new ApolloServer({
   typeDefs: schema,
   resolvers,
-  mocks,
+  context: {
+    models,
+  },
   playground: {
     endpoint: `http://localhost:${options.port}${options.endpoint}`,
   },

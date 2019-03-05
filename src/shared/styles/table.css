@@ -1,0 +1,38 @@
+
+.tableRowContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: var(--table-min-height);
+  max-height: var(--table-max-height);
+  overflow-x: hidden;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.headerContainer {
+  border-bottom: var(--table-border-bottom);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  display: flex
+}
+
+.rowContainer {
+  padding: 8px 0;
+}
+
+.rowContainer:hover,
+.rowContainer:visited {
+  color: var(--table-text-color);
+  text-decoration: none;
+}
+
+.rowContainer:hover {
+  background: var(--table-bg-color);
+}
+
+.cellContainer {
+  display: inline-block;
+  overflow: hidden;
+}

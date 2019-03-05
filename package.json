@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.2",
+    "react-apollo": "^2.5.1",
+    "react-content-loader": "^4.0.1",
     "react-dom": "^16.8.2",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "underscore": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",

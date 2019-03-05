@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Helvetica Neue LT Com";
+  src: url("../../assets/fonts/HelveticaNeueLTStd-BdCn.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT Com";
+  src: url("../../assets/fonts/HelveticaNeueLTStd-Lt.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT Com Condensed";
+  src: url("../../assets/fonts/HelveticaNeueLTStd-LtCn.otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT Com Condensed";
+  src: url("../../assets/fonts/HelveticaNeueLTStd-MdCn.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.titleText {
+  font-family: var(--font-family-base);
+  font-size: var(--section-title-font-size);
+  color: var(--section-title-color)
+}
+
+.tableText {
+  font-family: var(--font-family-base);
+  color: var(--table-text-color)
+}

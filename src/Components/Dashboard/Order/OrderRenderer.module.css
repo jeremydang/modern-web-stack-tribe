@@ -1,0 +1,20 @@
+
+.sectionTitle {
+  composes: titleText from '../../../shared/styles/typography.css';
+  margin-top: 40px;
+}
+
+.tableRowContainer {
+  composes: tableRowContainer from '../../../shared/styles/table.css';
+}
+
+.headerContainer {
+  composes: headerContainer from '../../../shared/styles/table.css';
+}
+
+.headerTitle {
+  composes: cellContainer from '../../../shared/styles/table.css';
+  composes: tableText from '../../../shared/styles/typography.css';
+  min-width: 72px;
+  width: 20%;
+}
